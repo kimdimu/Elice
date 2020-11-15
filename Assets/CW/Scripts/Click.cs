@@ -16,7 +16,8 @@ public class Click : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        
+        if (Input.GetMouseButtonDown(0)||Input.GetMouseButtonUp(0))
         {
             mousePos = Input.mousePosition;
             mousePos = cam.ScreenToWorldPoint(mousePos);
@@ -27,7 +28,6 @@ public class Click : MonoBehaviour
             if (hit.collider !=null)
             {
                 GameManager.Instance.isClick = true;
-
                 //love();
             }
         }

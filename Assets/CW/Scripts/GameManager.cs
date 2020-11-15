@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     public bool isMonocle;
     public int missionCount;
     public bool startMission;
-    public bool missioning;
+    //public bool missioning;
+    public bool clear;
 
 
     void Start()
@@ -38,7 +39,8 @@ public class GameManager : MonoBehaviour
         startMission = false;
         isMonocle = true;
         isClick = false;
-        missioning = false;
+        //missioning = false;
+        clear = false;
     }
 
     void Update()

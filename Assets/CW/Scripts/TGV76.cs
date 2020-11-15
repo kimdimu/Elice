@@ -14,13 +14,13 @@ public class TGV76 : MonoBehaviour
     void Start()
     {
         TGV_TGV_UI_bool(false);
-        TGV_TGV_VSXZ_bool(true);
+        TGV_TGV_VSXZ_bool(false);
         TGV_TGV_bool(true);
     }
 
     void Update()
     {
-        if (!GameManager.Instance.startMission)// 미션중이 아닐 때 초기화
+        if (!GameManager.Instance.startMission)// 미션중이 아닐 때
         {
             if (GameManager.Instance.missionCount != 0) //클리어 판정이 나면...
             {
@@ -29,6 +29,7 @@ public class TGV76 : MonoBehaviour
                 TGV_UI[6].SetActive(false);
                 GameManager.Instance.startMission = false;
                 TGV_TGV_UI_bool(false);
+                TGV_TGV_VSXZ_bool(false);
             }
             if (GameManager.Instance.missionCount == 0) //클리어 판정이 안나고 초기화하면.
             {
@@ -37,6 +38,8 @@ public class TGV76 : MonoBehaviour
                 TGV_UI[6].SetActive(false);
                 GameManager.Instance.startMission = false;
                 TGV_TGV_UI_bool(false);
+                TGV_TGV_VSXZ_bool(false);
+
                 TGV_TGV_bool(true);
             }
         }
@@ -60,12 +63,10 @@ public class TGV76 : MonoBehaviour
         {
             if (Click.ReturnName() == "TGV_Hd")
             {
-                pieceCount += 1;
                 getfalse(0); //머리를 클릭했다.
             }
             if (Click.ReturnName() == "TGV_Bd")
             {
-                pieceCount += 1;
                 getfalse(1); // 몸을 클릭했다.
             }
             if (Click.ReturnName() == "TGV_La")
@@ -75,26 +76,22 @@ public class TGV76 : MonoBehaviour
             }
             if (Click.ReturnName() == "TGV_Ra")
             {
-                pieceCount += 1;
                 getfalse(3); // 오른팔을 클릭했다.
             }
             if (Click.ReturnName() == "TGV_Li")
             {
-                pieceCount += 1;
                 getfalse(4); // 왼다리를 클릭했다.
             }
             if (Click.ReturnName() == "TGV_Ri")
             {
-                pieceCount += 1;
                 getfalse(5); // 오른다리를 클릭했다.
             }
 
-            if (pieceCount == 6) //6개를 다 모으면 뭐.. 이미지 등장
+            if (!TGV[0].enabled && !TGV[1].enabled && !TGV[2].enabled && !TGV[3].enabled && !TGV[4].enabled && !TGV[5].enabled) //6개를 다 모으면 뭐.. 이미지 등장
             {
                 TGV_TGV_VSXZ_bool(true);
 
-                GameManager.Instance.missionCount += 1;
-                GameManager.Instance.startMission = false;
+
             }
         }
     }
