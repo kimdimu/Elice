@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GwangJu80 : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public BoxCollider2D boxcol;
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+
+        if (GameManager.Instance.missionCount == 1)
+            boxcol.enabled = true;
+        else
+        {
+            boxcol.enabled = false;
+        }
     }
 }
