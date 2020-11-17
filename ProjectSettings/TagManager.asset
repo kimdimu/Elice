@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: dining2
+    uniqueID: 557118427
+    locked: 0
+  - name: dining1
+    uniqueID: 3964426839
+    locked: 0
+  - name: Elice
+    uniqueID: 3027387179
+    locked: 0

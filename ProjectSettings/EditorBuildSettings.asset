@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/JB/TitleScene.unity
+    guid: caa462b6119f26e4a80af4fa265147ca
+  - enabled: 1
+    path: Assets/FusionScene.unity
+    guid: 9db35abf0aceea34999bea13f6325a56
   m_configObjects: {}
