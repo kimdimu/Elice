@@ -9,13 +9,11 @@ public class MoveCamera : MonoBehaviour
 
     private float initialZPos = 0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         initialZPos = followingCursor.transform.position.y;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         if (GameManager.Instance.isMonocle == true) //모노클 이동

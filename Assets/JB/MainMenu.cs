@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public GameObject mainmenu;
     public GameObject help2;
     
@@ -15,7 +13,6 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
