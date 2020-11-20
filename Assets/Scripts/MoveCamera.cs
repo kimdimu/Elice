@@ -21,7 +21,7 @@ public class MoveCamera : MonoBehaviour
         if (GameManager.Instance.isMonocle == true) //모노클 이동
         {
             Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -11f));
-            followingCursor.transform.position = new Vector3(newPosition.x, newPosition.y, -11f);
+            followingCursor.transform.position = new Vector3(newPosition.x, newPosition.y-0.6f, -11f);
         }
 
 
