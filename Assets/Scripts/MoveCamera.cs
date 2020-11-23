@@ -18,12 +18,12 @@ public class MoveCamera : MonoBehaviour
     {
         if (GameManager.Instance.isMonocle == true) //모노클 이동
         {
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -11f));
-            followingCursor.transform.position = new Vector3(newPosition.x, newPosition.y-0.6f, -11f);
+            Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,0));
+            followingCursor.transform.position = new Vector3(newPosition.x, newPosition.y-0.6f, -1f);
         }
 
 
         transform.position = new Vector3(target.position.x, target.position.y+3,target.position.z-5f);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5.0f, 5.0f), Mathf.Clamp(transform.position.y, -20.0f, 20.0f), Mathf.Clamp(transform.position.z, -15.0f, 1.0f)); //이동범위제한
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5.0f, 5.0f), Mathf.Clamp(transform.position.y, -20.0f, 20.0f), Mathf.Clamp(transform.position.z, -15.0f, 0)); //이동범위제한
     }
 }

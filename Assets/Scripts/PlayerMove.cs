@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       transform.position = new Vector3(Mathf.Clamp(transform.position.x, -12.0f, 12.0f), 0,Mathf.Clamp(transform.position.z,-11.0f,1.0f )); //이동범위제한
+       transform.position = new Vector3(Mathf.Clamp(transform.position.x, -12.0f, 12.0f), 0,0 ); //이동범위제한
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {

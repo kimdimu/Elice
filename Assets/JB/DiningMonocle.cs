@@ -6,7 +6,10 @@ public class DiningMonocle : MonoBehaviour
 {
     // Start is called before the first frame update
 
-   
+    public GameObject dining1;
+    public GameObject dining2;
+    public GameObject monocle;
+
     void Start()
     {
         
@@ -26,8 +29,11 @@ public class DiningMonocle : MonoBehaviour
 
             if (GameManager.Instance.isMonocle == true)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, 0);  //z=0 으로 이동
+               
 
+                dining1.SetActive(true);
+                dining2.SetActive(false);
+                monocle.SetActive(false);
 
 
                 GameManager.Instance.isMonocle = false;             //모노클 꺼짐
@@ -37,7 +43,13 @@ public class DiningMonocle : MonoBehaviour
 
             else if (GameManager.Instance.isMonocle == false)
             {
-                transform.position += Vector3.back *10; //z=-10으로 이동
+              
+
+                dining1.SetActive(false);
+                dining2.SetActive(true);
+                monocle.SetActive(true);
+
+
                 GameManager.Instance.isMonocle = true;              //모노클 켜짐
                 Debug.Log("On");
                 return;

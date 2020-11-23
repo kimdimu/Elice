@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     {
         missionCount = 0;
         startMission = false;
-        isMonocle = true;
+        isMonocle = false;
         isClick = false;
         //missioning = false;
         clear = false;
