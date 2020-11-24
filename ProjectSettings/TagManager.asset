@@ -7,6 +7,7 @@ TagManager:
   - OnMono
   - MonocleObj
   - Correct
+  - Gull_Obj
   layers:
   - Default
   - TransparentFX

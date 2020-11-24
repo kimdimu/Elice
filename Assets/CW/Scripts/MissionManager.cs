@@ -23,7 +23,7 @@ public class MissionManager : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.isClick && Click.ReturnTag() == "MonocleObj") //+ 모노튼 착용상태면
+        if (GameManager.Instance.isClick && Click.ReturnTag() == "MonocleObj") //+ 모노클 착용상태면
         {
             missionImg();
             StartMissionImg();
@@ -48,7 +48,7 @@ public class MissionManager : MonoBehaviour
             mcImg[i].SetActive(true);
         }
         
-        Debug.Log(GameManager.Instance.missionCount);
+        //Debug.Log(GameManager.Instance.missionCount);
     }
 
     void StartMissionImg() //미션 시작 시 추가되는 스테이지별 이미지와 텍스트
@@ -78,10 +78,11 @@ public class MissionManager : MonoBehaviour
         if (!GameManager.Instance.clear) //클리어가 아니면
         {
             GameManager.Instance.startMission = true; //미션중이다.
+            Debug.Log("mission start!");
         }
         else if (GameManager.Instance.clear)
         {
-            GameManager.Instance.missionCount += 1; //다음 스테이지 이동하고
+            GameManager.Instance.missionCount += 2; //다음 스테이지 이동하고
             GameManager.Instance.clear = false; //클리어 초기화
         }
     }

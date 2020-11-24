@@ -17,7 +17,7 @@ public class Click : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetMouseButtonDown(0)||Input.GetMouseButtonUp(0))
+        if (/*Input.GetMouseButtonDown(0)||*/Input.GetMouseButtonUp(0))
         {
             mousePos = Input.mousePosition;
             mousePos = cam.ScreenToWorldPoint(mousePos);
@@ -40,11 +40,9 @@ public class Click : MonoBehaviour
     static public string ReturnName()
     {
             return hit.collider.gameObject.name;
-
     }
     static public string ReturnTag()
     {
-
             return hit.collider.gameObject.tag;
     }
 }

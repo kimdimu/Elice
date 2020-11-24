@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TGV76 : MonoBehaviour
-{
+{//모노클끼면 태권브이 이미지 보이게 하느거 추가
     public BoxCollider2D boxcol;
     public BoxCollider2D[] TGV;
     public GameObject[] TGV_UI;
     public GameObject[] TGV_VSXZ;
-
-    int pieceCount = 0;
 
     void Start()
     {
@@ -24,7 +22,6 @@ public class TGV76 : MonoBehaviour
         {
             if (GameManager.Instance.missionCount != 0) //클리어 판정이 나면...
             {
-                pieceCount = 0;
                 boxcol.enabled = false;
                 TGV_UI[6].SetActive(false);
                 GameManager.Instance.startMission = false;
@@ -33,7 +30,6 @@ public class TGV76 : MonoBehaviour
             }
             if (GameManager.Instance.missionCount == 0) //클리어 판정이 안나고 초기화하면.
             {
-                pieceCount = 0;
                 boxcol.enabled = false;
                 TGV_UI[6].SetActive(false);
                 GameManager.Instance.startMission = false;
@@ -71,7 +67,6 @@ public class TGV76 : MonoBehaviour
             }
             if (Click.ReturnName() == "TGV_La")
             {
-                pieceCount += 1;
                 getfalse(2); // 왼팔을 클릭했다.
             }
             if (Click.ReturnName() == "TGV_Ra")
