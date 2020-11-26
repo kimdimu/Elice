@@ -19,40 +19,32 @@ public class DiningMonocle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        Debug.Log(GameManager.Instance.isMonocle + "monooff");
 
- 
+        if (GameManager.Instance.isMonocle == true)
+        {
+            dining1.SetActive(false);
+            dining2.SetActive(true);
+            monocle.SetActive(true);
+        }
+        else
+        {
+            dining1.SetActive(true);
+            dining2.SetActive(false);
+            monocle.SetActive(false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-          
-
+            //모노클 꺼짐
             if (GameManager.Instance.isMonocle == true)
             {
-               
-
-                dining1.SetActive(true);
-                dining2.SetActive(false);
-                monocle.SetActive(false);
-
-
-                GameManager.Instance.isMonocle = false;             //모노클 꺼짐
-                Debug.Log("false");
-                return;
+                GameManager.Instance.isMonocle = false;
             }
-
-            else if (GameManager.Instance.isMonocle == false)
+            //모노클 켜짐
+            else
             {
-              
-
-                dining1.SetActive(false);
-                dining2.SetActive(true);
-                monocle.SetActive(true);
-
-
-                GameManager.Instance.isMonocle = true;              //모노클 켜짐
-                Debug.Log("On");
-                return;
+                GameManager.Instance.isMonocle = true;
             }
         }
     }

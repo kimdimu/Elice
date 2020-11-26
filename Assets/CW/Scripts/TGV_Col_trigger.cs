@@ -5,6 +5,7 @@ using UnityEngine;
 public class TGV_Col_trigger : MonoBehaviour
 {
     public GameObject[] VSXZ;
+    public GameObject player;
     float Posx = -3;
     float Posy = 0;
 
@@ -13,6 +14,10 @@ public class TGV_Col_trigger : MonoBehaviour
         chogihwa();
     }
 
+    private void Update()
+    {
+        transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Correct")

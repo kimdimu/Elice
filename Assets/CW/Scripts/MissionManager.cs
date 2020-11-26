@@ -23,7 +23,7 @@ public class MissionManager : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.isClick && Click.ReturnTag() == "MonocleObj") //+ 모노클 착용상태면
+        if (GameManager.Instance.isClick && Click.ReturnTag() == "MonocleObj" && GameManager.Instance.isMonocle) //+ 모노클 착용상태면
         {
             missionImg();
             StartMissionImg();
@@ -37,7 +37,7 @@ public class MissionManager : MonoBehaviour
             text.text = "Go to Next"; // 버튼 텍스트 변경하고
         }
     }
- 
+  
     void missionImg() //배경과 버튼 나오게 하는 함수
     {
         //GameManager.Instance.missioning = true; //이 ui가 켜졌다.
@@ -54,6 +54,7 @@ public class MissionManager : MonoBehaviour
     void StartMissionImg() //미션 시작 시 추가되는 스테이지별 이미지와 텍스트
     {
         mcImg[GameManager.Instance.missionCount + 2].SetActive(true); //스테이지에 맞는 텍스트 출력
+        GameManager.Instance.isMonocle = false;
     }
 
     void EndMissionImg() //미션 종료 시 추가되는 스테이지별 이미지와 텍스트
@@ -85,5 +86,7 @@ public class MissionManager : MonoBehaviour
             GameManager.Instance.missionCount += 2; //다음 스테이지 이동하고
             GameManager.Instance.clear = false; //클리어 초기화
         }
+
+        
     }
 }

@@ -19,37 +19,39 @@ public class PlayerMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-       transform.position = new Vector3(Mathf.Clamp(transform.position.x, -12.0f, 12.0f), 0,0 ); //이동범위제한
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -12.0f, 52.0f), transform.position.y, transform.position.z); //이동범위제한
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("TitleScene");
         }
 
+        if (!GameManager.Instance.isMonocle)
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.position = transform.position - transform.right * Time.deltaTime * speed;  //왼쪽이동
+                rend.flipX = false;                                                                 //좌우반전
+                anim.SetBool("IsWalking", true);
+            }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position = transform.position - transform.right * Time.deltaTime * speed;  //왼쪽이동
-            rend.flipX = false;                                                                 //좌우반전
-            anim.SetBool("IsWalking", true);
-        }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.position = transform.position + transform.right * Time.deltaTime * speed; //오른쪽이동
+                rend.flipX = true;                                                                //좌우반전
+                anim.SetBool("IsWalking", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.A))
+            {
+                anim.SetBool("IsWalking", false);
+            }
 
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.position = transform.position + transform.right * Time.deltaTime * speed; //오른쪽이동
-              rend.flipX = true;                                                                //좌우반전
-            anim.SetBool("IsWalking", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.A))
-        {
-            anim.SetBool("IsWalking", false);
-        }
-
-        else if (Input.GetKeyUp(KeyCode.D))
-        {
-            anim.SetBool("IsWalking", false);
+            else if (Input.GetKeyUp(KeyCode.D))
+            {
+                anim.SetBool("IsWalking", false);
+            }
         }
     }
 

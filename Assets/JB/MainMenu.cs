@@ -7,20 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainmenu;
     public GameObject help2;
-    
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+ 
 
     public void OnClickStart()
     {
-        SceneManager.LoadScene("FusionScene");
+        SceneManager.LoadScene("MainScene");
         Debug.Log("시작");
     }
     public void OnClickQuit()

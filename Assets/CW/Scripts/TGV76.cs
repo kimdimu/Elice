@@ -5,6 +5,7 @@ using UnityEngine;
 public class TGV76 : MonoBehaviour
 {//모노클끼면 태권브이 이미지 보이게 하느거 추가
     public BoxCollider2D boxcol;
+    public GameObject gameobj;
     public BoxCollider2D[] TGV;
     public GameObject[] TGV_UI;
     public GameObject[] TGV_VSXZ;
@@ -14,6 +15,7 @@ public class TGV76 : MonoBehaviour
         TGV_TGV_UI_bool(false);
         TGV_TGV_VSXZ_bool(false);
         TGV_TGV_bool(true);
+        gameobj.SetActive(false);
     }
 
     void Update()
@@ -35,6 +37,7 @@ public class TGV76 : MonoBehaviour
                 GameManager.Instance.startMission = false;
                 TGV_TGV_UI_bool(false);
                 TGV_TGV_VSXZ_bool(false);
+                gameobj.SetActive(false);
 
                 TGV_TGV_bool(true);
             }
@@ -42,8 +45,11 @@ public class TGV76 : MonoBehaviour
 
         Debug.Log(GameManager.Instance.missionCount);
 
-        if (GameManager.Instance.missionCount == 0)
+        if (GameManager.Instance.missionCount == 0 && GameManager.Instance.isMonocle)
+        {
             boxcol.enabled = true;
+            gameobj.SetActive(true);
+        }
 
 
         if (GameManager.Instance.missionCount == 0 && GameManager.Instance.startMission)

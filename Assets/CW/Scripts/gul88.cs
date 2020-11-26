@@ -38,7 +38,7 @@ public class gul88 : MonoBehaviour
             }
         }
 
-        if (GameManager.Instance.missionCount == 2) // + 모노클 상태면
+        if (GameManager.Instance.missionCount == 2 && GameManager.Instance.isMonocle) // + 모노클 상태면
         {
             boxcol.enabled = true; //콜라이더
             monocleObj.SetActive(true); //enable
@@ -115,7 +115,7 @@ public class gul88 : MonoBehaviour
 
     void Gull_Clear()
     {
-        if(gull_boy_obj[0].transform.position == monocleObj.transform.position)
+        if(Vector3.Distance(gull_boy_obj[0].transform.position, monocleObj.transform.position) <= 0.01f)//( == )
         {
             GameManager.Instance.clear=true;
         }
