@@ -9,6 +9,8 @@ public class DiningMonocle : MonoBehaviour
     public GameObject dining1;
     public GameObject dining2;
     public GameObject monocle;
+    public GameObject ball;
+    public GameObject Devil;
 
     void Start()
     {
@@ -26,12 +28,16 @@ public class DiningMonocle : MonoBehaviour
             dining1.SetActive(false);
             dining2.SetActive(true);
             monocle.SetActive(true);
+            ball.SetActive(true);
+            Devil.SetActive(false);
         }
         else
         {
             dining1.SetActive(true);
             dining2.SetActive(false);
             monocle.SetActive(false);
+            ball.SetActive(false);
+            Devil.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
