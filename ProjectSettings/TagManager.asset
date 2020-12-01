@@ -8,6 +8,7 @@ TagManager:
   - MonocleObj
   - Correct
   - Gull_Obj
+  - RedDevilDoll
   layers:
   - Default
   - TransparentFX

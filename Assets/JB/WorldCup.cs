@@ -23,17 +23,16 @@ public class WorldCup : MonoBehaviour
 
     void Update()
     {
-
-        int ran = Random.Range(0, 6);
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        //if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Vector2 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Ray2D ray = new Ray2D(wp, Vector2.zero);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if (hit.collider != null)
+            //Vector2 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //Ray2D ray = new Ray2D(wp, Vector2.zero);
+            //RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+            //if (hit.collider != null)
+            if(GameManager.Instance.isClick && Click.ReturnTag() == "RedDevilDoll")
             {
-                Random.Range(0, 6);
+                int ran = Random.Range(0, 6);
+                //Random.Range(0, 6);
 
                 if (ran == 1)           //붉은악마는 1번
                 {

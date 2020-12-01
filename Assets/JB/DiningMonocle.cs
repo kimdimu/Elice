@@ -21,7 +21,7 @@ public class DiningMonocle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GameManager.Instance.isMonocle + "monooff");
+        //Debug.Log(GameManager.Instance.isMonocle + "monooff");
 
         if (GameManager.Instance.isMonocle == true)
         {

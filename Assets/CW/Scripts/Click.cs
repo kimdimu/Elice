@@ -28,10 +28,10 @@ public class Click : MonoBehaviour
             if (hit.collider !=null)
             {
                 GameManager.Instance.isClick = true;
-                //love();
+                Debug.Log("isClick is " + GameManager.Instance.isClick);
             }
         }
-        else if(Input.GetMouseButton(0))
+        else// if(Input.GetMouseButton(0))
         {
             GameManager.Instance.isClick = false;
         }

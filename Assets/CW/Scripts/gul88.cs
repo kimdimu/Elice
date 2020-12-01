@@ -115,13 +115,13 @@ public class gul88 : MonoBehaviour
 
     void Gull_Clear()
     {
-        if(Vector3.Distance(gull_boy_obj[0].transform.position, monocleObj.transform.position) <= 0.01f)//( == )
+        if(Vector3.Distance(gull_boy_obj[0].transform.position, monocleObj.transform.position) <= 0.02f)//( == )
         {
             GameManager.Instance.clear=true;
         }
 
-        if(gull_boy_obj[1].transform.position == monocleObj.transform.position|| gull_boy_obj[2].transform.position == monocleObj.transform.position
-            || gull_boy_obj[3].transform.position == monocleObj.transform.position|| gull_boy_obj[4].transform.position == monocleObj.transform.position)
+        if(Vector3.Distance(gull_boy_obj[1].transform.position, monocleObj.transform.position) <= 0.02f || Vector3.Distance(gull_boy_obj[2].transform.position, monocleObj.transform.position) <= 0.02f
+            || Vector3.Distance(gull_boy_obj[3].transform.position, monocleObj.transform.position) <= 0.02f || Vector3.Distance(gull_boy_obj[4].transform.position, monocleObj.transform.position) <= 0.02f)
             GameManager.Instance.startMission = false;
     }
 }
