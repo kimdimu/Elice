@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/JB/TitleScene.unity
+    path: Assets/TitleScene.unity
     guid: caa462b6119f26e4a80af4fa265147ca
   - enabled: 1
     path: Assets/JB/FusionScene.unity
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainScene.unity
     guid: 812a2899a17d05f4db99ae53fbe0d8a4
+  - enabled: 1
+    path: Assets/EndingScene.unity
+    guid: 8e87ca1df14dac349a776fba8b9c6f95
   m_configObjects: {}

@@ -19,6 +19,7 @@ public class gul88 : MonoBehaviour
         obj_Count = 0;
         getobj = false;
         Gull_init(false); //일단 모두 가리기
+        //monocleObj.SetActive(false);
 
         for (int i = 0; i < gull_boy_obj_pos.Length; i++) //초기 위치 저장, 그 저장한 위치에 위치시키기
         {
@@ -38,12 +39,18 @@ public class gul88 : MonoBehaviour
             }
         }
 
-        if (GameManager.Instance.missionCount == 2 && GameManager.Instance.isMonocle) // + 모노클 상태면
+        if (GameManager.Instance.isMonocle)
         {
-            boxcol.enabled = true; //콜라이더
-            monocleObj.SetActive(true); //enable
+            if (GameManager.Instance.missionCount == 2)
+            {
+                boxcol.enabled = true;
+                monocleObj.SetActive(true);
+            }
         }
-
+        else
+        {
+            monocleObj.SetActive(false);
+        }
 
         if (GameManager.Instance.missionCount == 2 && GameManager.Instance.startMission) //2일 때 모두 온
         {
@@ -91,16 +98,10 @@ public class gul88 : MonoBehaviour
     {
         boxcol.enabled = mission; //콜라이더
         monocleObj.SetActive(mission); //enable
-        //getobj = mission;
 
         for (int i = 0; i < gull_boy_obj.Length; i++)
         {
             gull_boy_obj[i].enabled = mission; // 물건 5개col 부모
-
-            //if(gull_boy_obj[i].transform.position != gull_boy_obj_pos[i].transform.position)
-            //{
-            //    gull_boy_obj[i].transform.position = gull_boy_obj_pos[i].transform.position;
-            //}
         }
     }
 

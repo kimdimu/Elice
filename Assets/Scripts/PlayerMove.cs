@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMove : MonoBehaviour
 {
   
-     public int speed;
+     public float speed;
     Rigidbody2D rigid;
     public SpriteRenderer rend;
     Animator anim;

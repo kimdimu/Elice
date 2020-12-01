@@ -22,19 +22,20 @@ public class SoccerBall : MonoBehaviour
             //Ray2D ray2 = new Ray2D(wc, Vector2.zero);
             //RaycastHit2D hit2 = Physics2D.Raycast(ray2.origin, ray2.direction);
             //if (hit2.collider != null)
-            if(GameManager.Instance.isClick)
-            {
-                if(WorldCup.WB.WC == true)
-                {
-                    //성공
-                    Debug.Log("clear");
-                }
-                else
-                {
-                    //실패
-                    Debug.Log("fail");
-                }
-            }
+            //if(GameManager.Instance.isClick && GameManager.Instance.missionCount == 6)
+            //{
+            //    if(WorldCup.WB.WC == true)
+            //    {
+            //        //성공
+            //        GameManager.Instance.clear = true;
+            //    }
+            //    else
+            //    {
+            //        //실패
+            //        Debug.Log("fail");
+            //        GameManager.Instance.startMission = false;
+            //    }
+            //}
         }
     }
 }

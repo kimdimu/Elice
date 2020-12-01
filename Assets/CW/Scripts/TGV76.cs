@@ -45,12 +45,18 @@ public class TGV76 : MonoBehaviour
 
         Debug.Log(GameManager.Instance.missionCount);
 
-        if (GameManager.Instance.missionCount == 0 && GameManager.Instance.isMonocle)
+        if (GameManager.Instance.isMonocle)
         {
-            boxcol.enabled = true;
-            gameobj.SetActive(true);
+            if (GameManager.Instance.missionCount == 0)
+            {
+                boxcol.enabled = true;
+                gameobj.SetActive(true);
+            }
         }
-
+        else
+        {
+            gameobj.SetActive(false);
+        }
 
         if (GameManager.Instance.missionCount == 0 && GameManager.Instance.startMission)
         {
@@ -101,7 +107,7 @@ public class TGV76 : MonoBehaviour
     {
         TGV[getObj].enabled = false; //배치 obj col은 비활하고
         TGV_UI[getObj].SetActive(true); //ui sprite는 활성
-        Debug.Log(Click.ReturnName());
+        Debug.Log(Click.ReturnName()+"d");
     }
 
     //뭔가 3개를 하나로 만들 수 있을 것 같은데...
