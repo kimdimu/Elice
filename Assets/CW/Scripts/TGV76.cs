@@ -10,8 +10,11 @@ public class TGV76 : MonoBehaviour
     public GameObject[] TGV_UI;
     public GameObject[] TGV_VSXZ;
 
+
+
     void Start()
     {
+
         TGV_TGV_UI_bool(false);
         TGV_TGV_VSXZ_bool(false);
         TGV_TGV_bool(true);

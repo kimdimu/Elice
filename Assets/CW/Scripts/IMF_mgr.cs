@@ -10,11 +10,16 @@ public class IMF_mgr : MonoBehaviour
     public GameObject[] flies;
     public int[] boolflies;
 
+    public GameObject[] redImg;
+
+
     int goidCount;
     int num;
     
     void Start()
     {
+        redImg[0].SetActive(false);
+        redImg[1].SetActive(false);
         boolflies = new int[6];
         toEnd.enabled = false;
         num = 0;
@@ -53,6 +58,8 @@ void Update()
 
         if (GameManager.Instance.isMonocle) //모노클 O
         {
+            redImg[0].SetActive(false);
+            redImg[1].SetActive(false);
             if (GameManager.Instance.missionCount == 4)
             {
                 toEnd.enabled = false;
@@ -122,6 +129,8 @@ void Update()
                 else
                 {
                     GameManager.Instance.startMission = false;
+                    redImg[0].SetActive(true);
+                    redImg[1].SetActive(true);
                 }
             }
         }

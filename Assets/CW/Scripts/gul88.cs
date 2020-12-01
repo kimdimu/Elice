@@ -11,11 +11,15 @@ public class gul88 : MonoBehaviour
     public BoxCollider2D []gull_boy_obj;
     public Vector3 []gull_boy_obj_pos;
 
+    public GameObject[] redImg;
+
     bool getobj;
     int obj_Count;
 
     void Start()
     {
+        redImg[0].SetActive(false);
+        redImg[1].SetActive(false);
         obj_Count = 0;
         getobj = false;
         Gull_init(false); //일단 모두 가리기
@@ -41,6 +45,8 @@ public class gul88 : MonoBehaviour
 
         if (GameManager.Instance.isMonocle)
         {
+            redImg[0].SetActive(false);
+            redImg[1].SetActive(false);
             if (GameManager.Instance.missionCount == 2)
             {
                 boxcol.enabled = true;
@@ -121,8 +127,12 @@ public class gul88 : MonoBehaviour
             GameManager.Instance.clear=true;
         }
 
-        if(Vector3.Distance(gull_boy_obj[1].transform.position, monocleObj.transform.position) <= 0.02f || Vector3.Distance(gull_boy_obj[2].transform.position, monocleObj.transform.position) <= 0.02f
+        if (Vector3.Distance(gull_boy_obj[1].transform.position, monocleObj.transform.position) <= 0.02f || Vector3.Distance(gull_boy_obj[2].transform.position, monocleObj.transform.position) <= 0.02f
             || Vector3.Distance(gull_boy_obj[3].transform.position, monocleObj.transform.position) <= 0.02f || Vector3.Distance(gull_boy_obj[4].transform.position, monocleObj.transform.position) <= 0.02f)
+        {
             GameManager.Instance.startMission = false;
+            redImg[0].SetActive(true);
+            redImg[1].SetActive(true);
+        }
     }
 }
