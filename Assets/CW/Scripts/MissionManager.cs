@@ -83,7 +83,7 @@ public class MissionManager : MonoBehaviour
         }
         else if (GameManager.Instance.clear)
         {
-            GameManager.Instance.missionCount += 2; //다음 스테이지 이동하고
+            GameManager.Instance.missionCount += 1; //다음 스테이지 이동하고
             GameManager.Instance.clear = false; //클리어 초기화
         }
 

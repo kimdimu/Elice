@@ -5,6 +5,7 @@ using UnityEngine;
 public class TGV_Col_trigger : MonoBehaviour
 {
     public GameObject[] VSXZ;
+    public GameObject[] nowPos;
     public GameObject player;
     float Posx = -3;
     float Posy = 0;
@@ -50,13 +51,7 @@ public class TGV_Col_trigger : MonoBehaviour
     {
         for (int i = 0; i < VSXZ.Length; i++)
         {
-            if (i == 0)
-            {
-                Posx = -3;
-            }
-
-            VSXZ[i].transform.position = new Vector3(Posx, Posy, -4);
-            Posx += 2;
+            nowPos[i].transform.position = VSXZ[i].transform.position;
         }
 
     }

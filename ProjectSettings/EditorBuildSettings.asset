@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/JB/FusionScene.unity
     guid: 9db35abf0aceea34999bea13f6325a56
-  - enabled: 1
+  - enabled: 0
     path: Assets/MainScene.unity
     guid: 812a2899a17d05f4db99ae53fbe0d8a4
+  - enabled: 1
+    path: Assets/CW/Scenes/oronaminC.unity
+    guid: 7693f25b47f64364b840f2f19803b41c
   - enabled: 1
     path: Assets/EndingScene.unity
     guid: 8e87ca1df14dac349a776fba8b9c6f95

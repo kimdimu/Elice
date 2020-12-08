@@ -12,11 +12,11 @@ public class Click : MonoBehaviour
     void Start()
     {
         cam = GetComponent<Camera>();
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()
     {
-        
         if (/*Input.GetMouseButtonDown(0)||*/Input.GetMouseButtonUp(0))
         {
             mousePos = Input.mousePosition;
@@ -34,6 +34,11 @@ public class Click : MonoBehaviour
         else// if(Input.GetMouseButton(0))
         {
             GameManager.Instance.isClick = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

@@ -6,8 +6,8 @@ public class DiningMonocle : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject dining1;
-    public GameObject dining2;
+   // public GameObject dining1;
+    //public GameObject dining2;
     public GameObject monocle;
  
 
@@ -24,15 +24,16 @@ public class DiningMonocle : MonoBehaviour
 
         if (GameManager.Instance.isMonocle == true)
         {
-            dining1.SetActive(false);
-            dining2.SetActive(true);
             monocle.SetActive(true);
+            //dining1.SetActive(false);
+            //dining2.SetActive(true);
+           
 
         }
         else
         {
-            dining1.SetActive(true);
-            dining2.SetActive(false);
+            //dining1.SetActive(true);
+            //dining2.SetActive(false);
             monocle.SetActive(false);
 
         }

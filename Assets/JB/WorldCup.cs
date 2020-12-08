@@ -39,7 +39,7 @@ public class WorldCup : MonoBehaviour
         }
 
         //if (GameManager.Instance.isClick && Click.ReturnName() == "BallCol" && GameManager.Instance.missionCount == 6)
-        if(GameManager.Instance.missionCount == 6)
+        if(GameManager.Instance.missionCount == 4)
         {
             if (WB.WC == true)
             {
@@ -55,19 +55,20 @@ public class WorldCup : MonoBehaviour
         }
 
 
-        if (GameManager.Instance.missionCount == 6 && GameManager.Instance.isMonocle) // + 모노클 상태면
+        if (GameManager.Instance.missionCount == 4 && GameManager.Instance.isMonocle) // + 모노클 상태면
         {
             Debug.Log("6_monocle");
-            ball.SetActive(true);
+            
             devilCol.enabled = true;
             ballCol.enabled = false;
+            ball.SetActive(true);
         }
         else
         {
             ball.SetActive(false);
         }
 
-        if (GameManager.Instance.missionCount == 6 && GameManager.Instance.startMission) // 6번 미션 중일 때
+        if (GameManager.Instance.missionCount == 4 && GameManager.Instance.startMission) // 6번 미션 중일 때
         {
             if(!GameManager.Instance.isMonocle)
             ballCol.enabled = true;

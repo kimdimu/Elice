@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IMF_mgr : MonoBehaviour
 {
-    public BoxCollider2D toEnd;
+    public GameObject toEnd;
     public BoxCollider2D monoCol;
     public GameObject monoObj;
     public GameObject[] flies;
@@ -21,7 +21,7 @@ public class IMF_mgr : MonoBehaviour
         redImg[0].SetActive(false);
         redImg[1].SetActive(false);
         boolflies = new int[6];
-        toEnd.enabled = false;
+        toEnd.SetActive(false);
         num = 0;
         goidCount = 0;
         monoObj.SetActive(false);
@@ -42,7 +42,7 @@ void Update()
     {
         if (!GameManager.Instance.startMission)//미션중이 아니다. 미션이 끝났다. 초기화하자
         {
-            toEnd.enabled = false;
+            toEnd.SetActive(false);
             num = 0;
             for (int i = 0; i < flies.Length; i++) //파리들을 끈다.
             {
@@ -60,9 +60,9 @@ void Update()
         {
             redImg[0].SetActive(false);
             redImg[1].SetActive(false);
-            if (GameManager.Instance.missionCount == 4)
+            if (GameManager.Instance.missionCount == 3)
             {
-                toEnd.enabled = false;
+                toEnd.SetActive(false);
                 monoCol.enabled = true;
                 monoObj.SetActive(true);
 
@@ -77,10 +77,10 @@ void Update()
             monoObj.SetActive(false);
         }
 
-        if (GameManager.Instance.missionCount == 4 && GameManager.Instance.startMission) // 4번 미션이 진행중이면
+        if (GameManager.Instance.missionCount == 3 && GameManager.Instance.startMission) // 3번 미션이 진행중이면
         {
             if(!GameManager.Instance.isMonocle)
-            toEnd.enabled = true; //테이블 콜라이더 온
+                toEnd.SetActive(true); //테이블 콜라이더 온
 
             for (int i = 0; i < flies.Length; i++) //파리들을 켠다.
             {

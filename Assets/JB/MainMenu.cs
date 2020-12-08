@@ -7,11 +7,24 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainmenu;
     public GameObject help2;
- 
-
+    bool a;
+    private void Start()
+    {
+        a = false;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(!a)
+            OnClickHelp();
+            else
+            OnClickeHelpBack();
+        }
+    }
     public void OnClickStart()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("oronaminC");
         Debug.Log("시작");
     }
     public void OnClickQuit()
@@ -24,7 +37,7 @@ public class MainMenu : MonoBehaviour
     }
     public void OnClickHelp()
     {
-
+        a = true;
         help2.SetActive(true);
         mainmenu.SetActive(false);
         Debug.Log("도움말");
@@ -32,6 +45,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnClickeHelpBack()
     {
+        a = false;
         help2.SetActive(false);
         mainmenu.SetActive(true);
     }
@@ -39,5 +53,10 @@ public class MainMenu : MonoBehaviour
     public void OnClickSet()
     {
         Debug.Log("설정");
+    }
+
+    public void gotitle()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 }

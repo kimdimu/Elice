@@ -8,7 +8,7 @@ public class Ending : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.Instance.missionCount == 8)
+        if(GameManager.Instance.missionCount == 5)
         {
             SceneManager.LoadScene("EndingScene");
         }

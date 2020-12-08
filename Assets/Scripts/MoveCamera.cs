@@ -14,7 +14,7 @@ public class MoveCamera : MonoBehaviour
         initialZPos = followingCursor.transform.position.y;
     }
 
-    void LateUpdate()
+    void Update()
     {
         if (GameManager.Instance.isMonocle == true) //모노클 이동
         {
@@ -24,6 +24,6 @@ public class MoveCamera : MonoBehaviour
 
 
         transform.position = new Vector3(target.position.x, target.position.y+3,transform.position.z);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5.0f, 42.9f), Mathf.Clamp(transform.position.y, -20.0f, 20.0f), Mathf.Clamp(transform.position.z, -15.0f, 0)); //이동범위제한
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.32f, 51.3f), Mathf.Clamp(transform.position.y, -20.0f, 20.0f), Mathf.Clamp(transform.position.z, -15.0f, 0)); //이동범위제한
     }
 }
