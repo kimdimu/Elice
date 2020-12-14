@@ -84,6 +84,7 @@ public class WorldCup : MonoBehaviour
     {
         if (GameManager.Instance.isClick && Click.ReturnTag() == "RedDevilDoll")
         {
+            GetSound.instance.playSound();
             int ran = Random.Range(0, 6);
             //Random.Range(0, 6);
 

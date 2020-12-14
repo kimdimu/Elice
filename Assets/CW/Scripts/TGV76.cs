@@ -111,6 +111,7 @@ public class TGV76 : MonoBehaviour
         TGV[getObj].enabled = false; //배치 obj col은 비활하고
         TGV_UI[getObj].SetActive(true); //ui sprite는 활성
         Debug.Log(Click.ReturnName()+"d");
+        GetSound.instance.playSound();
     }
 
     //뭔가 3개를 하나로 만들 수 있을 것 같은데...

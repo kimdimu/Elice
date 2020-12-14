@@ -131,6 +131,7 @@ void Update()
                     GameManager.Instance.startMission = false;
                     redImg[0].SetActive(true);
                     redImg[1].SetActive(true);
+                    MissionManager.missionfailsound();
                 }
             }
         }
@@ -140,6 +141,7 @@ void Update()
             flies[getObj].SetActive(false); //배치 obj col은 비활하고
             Debug.Log(Click.ReturnName());
             boolflies[getObj] = 1;
+            GetSound.instance.playSound();
 
         }
     }

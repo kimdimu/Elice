@@ -44,6 +44,7 @@ public class TGV_Col_trigger : MonoBehaviour
             redImg[0].SetActive(true);
             redImg[1].SetActive(true);
             Debug.Log("NonCorrect");
+            MissionManager.missionfailsound();
         }
     }
 

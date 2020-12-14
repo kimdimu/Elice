@@ -20,7 +20,7 @@ public class gul88 : MonoBehaviour
     {
         redImg[0].SetActive(false);
         redImg[1].SetActive(false);
-        obj_Count = 0;
+        obj_Count = 5;
         getobj = false;
         Gull_init(false); //일단 모두 가리기
         //monocleObj.SetActive(false);
@@ -34,6 +34,8 @@ public class gul88 : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(getobj);
+
         if (!GameManager.Instance.startMission) //미션 상태가 아닐 때 위치 초기화
         {
             for (int i = 0; i < gull_boy_obj_pos.Length; i++)
@@ -41,6 +43,8 @@ public class gul88 : MonoBehaviour
                 getobj = false;
                 gull_boy_obj[i].transform.position = gull_boy_obj_pos[i];
             }
+
+            obj_Count = 5;
         }
 
         if (GameManager.Instance.isMonocle)
@@ -62,9 +66,10 @@ public class gul88 : MonoBehaviour
         {
             Gull_init(true); //미션 시작 시 트루됨
 
-            if (Click.ReturnTag() == "Gull_Obj")
+            if (GameManager.Instance.isClick && Click.ReturnTag() == "Gull_Obj")
             {
-                getobj = true;
+                GetSound.instance.playSound();
+                   getobj = true;
                 Debug.Log("Tag gull obj");
 
                 if (Click.ReturnName() == "굴렁쇠")
@@ -77,11 +82,10 @@ public class gul88 : MonoBehaviour
                     obj_Count = 3;
                 else if (Click.ReturnName() == "화분")
                     obj_Count = 4;
-                else
-                {
-                    getobj = false;
-                    //자리 초기화
-                }
+            }
+            else
+            {
+                getobj = true;
             }
         }
 
@@ -133,6 +137,7 @@ public class gul88 : MonoBehaviour
             GameManager.Instance.startMission = false;
             redImg[0].SetActive(true);
             redImg[1].SetActive(true);
+            MissionManager.missionfailsound();
         }
     }
 }

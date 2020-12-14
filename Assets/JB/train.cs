@@ -85,6 +85,7 @@ public class train : MonoBehaviour
             GameManager.Instance.startMission = false;
             redImg[0].SetActive(true);
             redImg[1].SetActive(true);
+            MissionManager.missionfailsound();
         }
 
         else if (PDist <= 1) //프로메슘 도착
@@ -93,6 +94,7 @@ public class train : MonoBehaviour
             GameManager.Instance.startMission = false;
             redImg[0].SetActive(true);
             redImg[1].SetActive(true);
+            MissionManager.missionfailsound();
         }
 
 

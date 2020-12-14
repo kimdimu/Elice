@@ -9,8 +9,22 @@ public class MissionManager : MonoBehaviour
     public GameObject []mcImg_end;
     public Text text;
 
+    public AudioClip startsfx;
+    public AudioClip clearsfx;
+    static public AudioClip failsfx;
+    private AudioSource startmusic;
+    private AudioSource clearmusic;
+    static public AudioSource failmusic;
+    public AudioClip failmusic2;
+
     void Start()
     {
+        startmusic = GetComponent<AudioSource>();
+        clearmusic = GetComponent<AudioSource>();
+        failmusic = GetComponent<AudioSource>();
+
+        failsfx = failmusic2;
+
         for (int i = 0; i < mcImg.Length; i++)
         {
             mcImg[i].SetActive(false);
@@ -21,12 +35,26 @@ public class MissionManager : MonoBehaviour
         }
     }
 
+    public void missionstartsound()
+    {
+        startmusic.PlayOneShot(startsfx);
+    }
+    public void missionclearsound()
+    {
+        clearmusic.PlayOneShot(clearsfx);
+    }
+    static public void missionfailsound()
+    {
+        failmusic.PlayOneShot(failsfx);
+    }
+
     void Update()
     {
         if (GameManager.Instance.isClick && Click.ReturnTag() == "MonocleObj" && GameManager.Instance.isMonocle) //+ 모노클 착용상태면
         {
             missionImg();
             StartMissionImg();
+            missionstartsound();
             text.text = "Find Memory";
         }
 
@@ -85,8 +113,9 @@ public class MissionManager : MonoBehaviour
         {
             GameManager.Instance.missionCount += 1; //다음 스테이지 이동하고
             GameManager.Instance.clear = false; //클리어 초기화
-        }
+            missionclearsound();
 
+        }
         
     }
 }
